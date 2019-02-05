@@ -1,0 +1,11 @@
+<h1>Parent Component</h1>
+<button type="button" (click)="userLogin=true">Login</button>
+<button type="button" (click)="userLogin=false">Logout</button>
+
+{{ userLogin }}
+
+<app-child [messageDisplay]="userLogin" #child (greetEvent)="getGreet($event)"></app-child>
+
+<!--template reference-->
+<h1>{{ child.name }}</h1>
+<button type="text" (click)="child.eventTrigger()">Click</button>

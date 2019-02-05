@@ -1,0 +1,35 @@
+<!--propert binding-->
+<h1>{{ name }}</h1>
+
+<!--Event binding-->
+<div>
+   <button type="button" (click)="countValue()">Click</button>
+   <p>Count value is {{ count }}</p>
+</div>
+
+<!--Two way binding-->
+<div>
+  <input type="text" [(ngModel)]="user">
+  <p>Hello {{ user }}</p>
+</div>
+
+<!--Event change method-->
+<div>
+  <input type="text" [ngModel]="userChange" (ngModelChange)="userChangeMethod($event)">
+  <p>How are you {{ userChange }}</p>
+</div>
+
+<!--Getter and setter-->
+<div>
+  <input type="text" [(ngModel)]="getterSetter">
+  <p>Welcome back {{ getterSetter }}</p>
+</div>
+
+<!--Uisng @viewChild to focus on input element-->
+<div style="border: 1px solid #333; padding: 20px 20px;">
+  <form>
+      <div>Name: <input type="text"></div>
+      <div>Email: <input type="email" #name></div>
+      <div>Password: <input type="password"></div>
+  </form>
+</div>
